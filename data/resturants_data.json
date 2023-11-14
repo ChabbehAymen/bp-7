@@ -1,0 +1,194 @@
+{
+  "resturants": [
+    {
+      "id": 1,
+      "name": "La Trattoria",
+      "address": "123 Main Street, Cityville",
+      "specialty": "Italian Cuisine",
+      "note": 4.5,
+      "logo": "/images/latrattoria-logo.png",
+      "hours": {
+        "monday": "11:00 AM - 9:00 PM",
+        "tuesday": "11:00 AM - 9:00 PM",
+        "wednesday": "11:00 AM - 9:00 PM",
+        "thursday": "11:00 AM - 9:00 PM",
+        "friday": "11:00 AM - 10:00 PM",
+        "saturday": "12:00 PM - 10:00 PM",
+        "sunday": "12:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 123-4567",
+      "website": "https://www.latrattoria.com/"
+    },
+    {
+      "id": 2,
+      "name": "Sushi Haven",
+      "address": "456 Oak Street, Townsville",
+      "specialty": "Japanese Cuisine",
+      "note": 4.2,
+      "logo": "/images/sushihaven-logo.png",
+      "hours": {
+        "monday": "12:00 PM - 8:00 PM",
+        "tuesday": "12:00 PM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "12:00 PM - 9:00 PM",
+        "friday": "12:00 PM - 9:00 PM",
+        "saturday": "1:00 PM - 10:00 PM",
+        "sunday": "1:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 234-5678",
+      "website": "https://www.sushihaven.com/"
+    },
+    {
+      "id": 3,
+      "name": "Taco Plaza",
+      "address": "789 Maple Avenue, Villagetown",
+      "specialty": "Mexican Cuisine",
+      "note": 4.0,
+      "logo": "/images/tacoplaza-logo.png",
+      "hours": {
+        "monday": "11:00 AM - 8:00 PM",
+        "tuesday": "11:00 AM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "11:00 AM - 9:00 PM",
+        "friday": "11:00 AM - 9:00 PM",
+        "saturday": "12:00 PM - 10:00 PM",
+        "sunday": "12:00 PM - 7:00 PM"
+      },
+      "phone": "+1 (555) 345-6789",
+      "website": "https://www.tacoplaza.com"
+    },
+    {
+      "id": 4,
+      "name": "Burger Bistro",
+      "address": "101 Pine Lane, Suburbia",
+      "specialty": "American Cuisine",
+      "note": 4.8,
+      "logo": "/images/burgerbistro-logo.png",
+      "hours": {
+        "monday": "11:30 AM - 9:00 PM",
+        "tuesday": "11:30 AM - 9:00 PM",
+        "wednesday": "11:30 AM - 9:00 PM",
+        "thursday": "11:30 AM - 9:00 PM",
+        "friday": "11:30 AM - 10:00 PM",
+        "saturday": "12:00 PM - 10:00 PM",
+        "sunday": "12:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 456-7890",
+      "website": "https://www.burgerbistro.com"
+    },
+    {
+      "id": 5,
+      "name": "Noodle Nirvana",
+      "address": "222 Olive Street, Metropolis",
+      "specialty": "Asian Cuisine",
+      "note": 4.4,
+      "logo": "/images/noodlenirvana-logo.png",
+      "hours": {
+        "monday": "12:00 PM - 8:00 PM",
+        "tuesday": "12:00 PM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "12:00 PM - 9:00 PM",
+        "friday": "12:00 PM - 9:00 PM",
+        "saturday": "1:00 PM - 10:00 PM",
+        "sunday": "1:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 567-8901",
+      "website": "https://www.noodlenirvana.com"
+    },
+    {
+      "id": 6,
+      "name": "Mediterranean Delight",
+      "address": "333 Cypress Road, Seaside",
+      "specialty": "Mediterranean Cuisine",
+      "note": 4.6,
+      "logo": "/images/mediterraneandelight-logo.png",
+      "hours": {
+        "monday": "12:00 PM - 8:00 PM",
+        "tuesday": "12:00 PM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "12:00 PM - 9:00 PM",
+        "friday": "12:00 PM - 9:00 PM",
+        "saturday": "1:00 PM - 10:00 PM",
+        "sunday": "1:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 678-9012",
+      "website": "https://www.mediterraneandelight.com"
+    },
+    {
+      "id": 7,
+      "name": "Vegetarian Haven",
+      "address": "444 Elm Street, Greentown",
+      "specialty": "Vegetarian Cuisine",
+      "note": 4.7,
+      "logo": "/images/vegetarianhaven-logo.png",
+      "hours": {
+        "monday": "11:00 AM - 8:00 PM",
+        "tuesday": "11:00 AM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "11:00 AM - 9:00 PM",
+        "friday": "11:00 AM - 9:00 PM",
+        "saturday": "12:00 PM - 10:00 PM",
+        "sunday": "12:00 PM - 7:00 PM"
+      },
+      "phone": "+1 (555) 789-0123",
+      "website": "https://www.vegetarianhaven.com"
+    },
+    {
+      "id": 8,
+      "name": "Seafood Sensation",
+      "address": "555 Coral Avenue, Beachside",
+      "specialty": "Seafood Cuisine",
+      "note": 4.3,
+      "logo": "/images/seafoodsensation-logo.png",
+      "hours": {
+        "monday": "12:00 PM - 8:00 PM",
+        "tuesday": "12:00 PM - 8:00 PM",
+        "wednesday": "Closed",
+        "thursday": "12:00 PM - 9:00 PM",
+        "friday": "12:00 PM - 9:00 PM",
+        "saturday": "1:00 PM - 10:00 PM",
+        "sunday": "1:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 890-1234",
+      "website": "https://www.seafoodsensation.com"
+    },
+    {
+      "id": 9,
+      "name": "BBQ Junction",
+      "address": "666 Hickory Lane, Smoketown",
+      "specialty": "Barbecue Cuisine",
+      "note": 4.9,
+      "logo": "/images/bbqjunction-logo.png",
+      "hours": {
+        "monday": "11:30 AM - 9:00 PM",
+        "tuesday": "11:30 AM - 9:00 PM",
+        "wednesday": "11:30 AM - 9:00 PM",
+        "thursday": "11:30 AM - 9:00 PM",
+        "friday": "11:30 AM - 10:00 PM",
+        "saturday": "12:00 PM - 10:00 PM",
+        "sunday": "12:00 PM - 8:00 PM"
+      },
+      "phone": "+1 (555) 901-2345",
+      "website": "https://www.bbqjunction.com"
+    },
+    {
+      "id": 10,
+      "name": "Café Parisien",
+      "address": "777 Rue de la Croissant, Paris",
+      "specialty": "French Cuisine",
+      "note": 4.6,
+      "logo": "/images/cafeparisien-logo.png",
+      "hours": {
+        "monday": "8:00 AM - 10:00 PM",
+        "tuesday": "8:00 AM - 10:00 PM",
+        "wednesday": "8:00 AM - 10:00 PM",
+        "thursday": "8:00 AM - 10:00 PM",
+        "friday": "8:00 AM - 11:00 PM",
+        "saturday": "9:00 AM - 11:00 PM",
+        "sunday": "9:00 AM - 9:00 PM"
+      },
+      "phone": "+33 1 2345 6789",
+      "website": "https://www.cafeparisien.fr/"
+    }
+  ]
+}
