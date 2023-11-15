@@ -1,5 +1,4 @@
-{
-  "resturants": [
+[
     {
       "id": 1,
       "name": "La Trattoria",
@@ -191,4 +190,3 @@
       "website": "https://www.cafeparisien.fr/"
     }
   ]
-}
