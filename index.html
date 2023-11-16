@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>RestoStito</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-	<header>
-		<h1></h1>
-		
-	</header>
-	<main></main>
-	<footer></footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RestoStito</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="https://kit.fontawesome.com/f3cda0a0f5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <h1>RestoStito</h1>
+		  <label for="search-bar">
+			<input type="text" name="" id="search-bar" placeholder="Search..." />
+			<div><i></i></div>
+		  </label>
+        </div>
+        <div>
+			<div>
+				<label for="below-3-radio">
+					<input type="radio" id="below-3-radio" name="rate-radio-group" />
+					Less Than 3.0
+				</label>
+				<label for="above-3-radio">
+					<input type="radio" id="above-3-radio" name="rate-radio-group"/>
+					3.0 - 4.0
+				</label>
+				<label for="above-4-radio">
+					<input type="radio" id="above-4-radio" name="rate-radio-group"/>
+					4.0 - 5.0
+				</label>
+			</div>
+			<select name="" id="">
+				<option value="">speciality</option>
+			</select>
+        </div>
+	</div>
+	<hr>
+    </header>
+    <main>
+		<div class="resto-card">
+			<div class="resto-log"></div>
+			<div class="resto-name-rate">
+				<h3>La Trattoria</h3>
+				<div class="resto-rate">
+					<i class="fa fa-star"></i>
+					<h3>5.0</h3>
+				</div>
+			</div>
+			<div class="resto-speciality-details">
+				<h3>Italian Cuisine</h3>
+				<button>Details</button>
+			</div>
+		</div>
+	</main>
+    <footer></footer>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
