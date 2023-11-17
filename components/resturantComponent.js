@@ -6,7 +6,7 @@ class RestoCard extends HTMLElement{
         this.id = this.getAttribute('id');
         this.innerHTML = `
 		<div class="resto-card">
-        <div class="resto-logo"><img src="https://t3.ftcdn.net/jpg/02/06/04/70/240_F_206047084_OxZGQ404N8rocQmItLIQRMRWlQwV3mSH.jpg"></div>
+        <div class="resto-logo"><img src="${this.getAttribute("logo")}"></div>
         <div class="resto-name-rate">
             <h3>${this.getAttribute('name')}</h3>
             <div class="resto-rate">
