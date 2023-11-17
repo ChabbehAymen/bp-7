@@ -20,16 +20,20 @@
         </div>
         <div>
 			<div>
+				<label>
+					<input id="all-restos" type="radio" name="rate-radio-group" value="all" checked>
+					all
+				</label>
 				<label for="below-3-radio">
-					<input type="radio" id="below-3-radio" name="rate-radio-group" />
+					<input type="radio" id="below-3-radio" name="rate-radio-group" value="-3" />
 					Less Than 3.0
 				</label>
 				<label for="above-3-radio">
-					<input type="radio" id="above-3-radio" name="rate-radio-group"/>
+					<input type="radio" id="above-3-radio" name="rate-radio-group" value="3-4" />
 					3.0 - 4.0
 				</label>
 				<label for="above-4-radio">
-					<input type="radio" id="above-4-radio" name="rate-radio-group"/>
+					<input type="radio" id="above-4-radio" name="rate-radio-group" value="4-5"/>
 					4.0 - 5.0
 				</label>
 			</div>
@@ -41,10 +45,11 @@
 	<hr>
     </header>
     <main>
-		<resto-card id="1" logo="https://t3.ftcdn.net/jpg/02/06/04/70/240_F_206047084_OxZGQ404N8rocQmItLIQRMRWlQwV3mSH.jpg" name="La Trattoria" rate="4.5" speciality="Italian Cuisine"></resto-card>
 	</main>
-    <footer></footer>
+    <footer>
+		<h1>RestoStito</h1>
+	</footer>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="module" src="script.js" ></script>
   </body>
 </html>

@@ -8,7 +8,7 @@
 }
 body {
   font-family: "Prosto One", sans-serif;
-  height: 100vh;
+  margin: 0;
 }
 
 header > div {
@@ -81,15 +81,15 @@ header > div > div:has(select) select:focus {
 }
 
 main{
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 5%;
   width: 80%;
   margin-left: 10%;
 }
 
 resto-card{
-  width: 30%;
+  width: 100%;
   box-shadow: 0 0 4px rgb(0, 0, 0, .3);
 }
 
@@ -105,6 +105,7 @@ resto-card .resto-card > div:has(h3){
 
 .resto-logo img{
   width: 100%;
+  height: 20vh;
 }
 
 .resto-rate{
@@ -123,3 +124,8 @@ resto-card .resto-card > div:has(h3){
 }
 
 
+footer{
+    width: 30vh;
+    width: 100%;
+    background-color: black;
+}
