@@ -80,3 +80,46 @@ header > div > div:has(select) select:focus {
     box-shadow: 0 0 4px var(--primary-color);
 }
 
+main{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+resto-card{
+  width: 30%;
+  box-shadow: 0 0 4px rgb(0, 0, 0, .3);
+}
+
+.resto-card > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+resto-card .resto-card > div:has(h3){
+  padding: 0 5%;
+}
+
+.resto-logo img{
+  width: 100%;
+}
+
+.resto-rate{
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.resto-card > div:has(button) button{
+  height: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+

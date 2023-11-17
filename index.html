@@ -6,6 +6,7 @@
     <title>RestoStito</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 	<script src="https://kit.fontawesome.com/f3cda0a0f5.js" crossorigin="anonymous"></script>
+	<script src="/components/resturantComponent.js"></script> <!-- this script tag is form my custom element -->
   </head>
   <body>
     <header>
@@ -40,20 +41,7 @@
 	<hr>
     </header>
     <main>
-		<div class="resto-card">
-			<div class="resto-log"></div>
-			<div class="resto-name-rate">
-				<h3>La Trattoria</h3>
-				<div class="resto-rate">
-					<i class="fa fa-star"></i>
-					<h3>5.0</h3>
-				</div>
-			</div>
-			<div class="resto-speciality-details">
-				<h3>Italian Cuisine</h3>
-				<button>Details</button>
-			</div>
-		</div>
+		<resto-card id="1" logo="" name="La Trattoria" rate="4.5" speciality="Italian Cuisine"></resto-card>
 	</main>
     <footer></footer>
 
