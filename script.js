@@ -3,16 +3,15 @@
  */
 let rateRadios = document.querySelectorAll('input[name="rate-radio-group"]');
 let main = document.querySelector("main");
+let allRestoCards;
 let xhr = new XMLHttpRequest();
 xhr.open("GET", "/data/resturants_data.json");
 
 xhr.onload = function () {
   let allRestos = JSON.parse(xhr.responseText);
   createRestos(allRestos);
-  filterByRate(allRestos);
   createSpecialitySelect();
-  filterBySpeciality(allRestos);
-  searchInRestos();
+  allRestoCards = document.querySelectorAll("resto-card");
 };
 xhr.send();
 
@@ -36,6 +35,7 @@ function createRestos(allRestos) {
 // creates my custom element for each object of the fetched json data
 function createRestoCard(id, logo, name, rate, speciality) {
   let restoCard = document.createElement("resto-card");
+  // restoCard.setAttributes(['id', 'logo', 'name', 'rate', 'speciality'], [id, logo, name, rate, speciality]);
   restoCard.setAttribute("id", id);
   restoCard.setAttribute("logo", logo);
   restoCard.setAttribute("name", name);
@@ -43,6 +43,16 @@ function createRestoCard(id, logo, name, rate, speciality) {
   restoCard.setAttribute("speciality", speciality);
   return restoCard;
 }
+
+
+// TODO(fix this)
+// window.HTMLElement.prototype.setAttributes = function (attributeskey, attributesValue) {
+//   console.log(this);
+//   for (let i= 0; i<attributeskey.lenght; i++){
+//     console.log(`the key is ${attributeskey[i]},and the value ${attributesValue[i]}`);
+//     this.setAttribute(attributeskey[i], attributesValue[i]);
+//   }
+// }
 
 function createSpecialitySelect() {
   let restos = document.querySelectorAll("main resto-card");
@@ -74,127 +84,90 @@ function insertOption(speciality) {
   `;
 }
 
-function filterByRate(allRestos) {
-  rateRadios.forEach((radio) => {
-    radio.onclick = function () {
-      document.querySelector("header select").value = "all-speciality";
-      switch (radio.value) {
-        case radioStates.allRestos:
-          createRestos(allRestos);
-          break;
-        case radioStates.lessThanTree:
-          filterLessOfTreeRateRestos(allRestos);
-          break;
-        case radioStates.threeToFour:
-          filterFormThreeToFourRate(allRestos);
-          break;
-        case radioStates.fourToFive:
-          filterFormFourToFiveRate(allRestos);
-          break;
-        default:
-          break;
-      }
-    };
+rateRadios.forEach((radio) => {
+  radio.addEventListener("click", (event) => {
+    filterByRate(event.target);
+  });
+});
+
+function filterByRate(radio) {
+  document.querySelector("header select").value = "all-speciality";
+  allRestoCards.forEach((restoCard) => {
+    let restoCardRate = restoCard.getAttribute("rate");
+    switch (radio.value) {
+      case radioStates.allRestos:
+        restoCard.style.display = "block";
+        break;
+      case radioStates.lessThanTree:
+        filterLessOfTreeRateRestos(restoCard, restoCardRate);
+        break;
+      case radioStates.threeToFour:
+        filterFormThreeToFourRate(restoCard, restoCardRate);
+        break;
+      case radioStates.fourToFive:
+        filterFormFourToFiveRate(restoCard, restoCardRate);
+        break;
+    }
   });
 }
 
 // filters resturants to only have rate less than 3
-function filterLessOfTreeRateRestos(allRestos) {
-  main.innerHTML = "";
-  for (const resto of allRestos) {
-    if (resto.note < 3) {
-      main.appendChild(
-        createRestoCard(
-          resto.id,
-          resto.logo,
-          resto.name,
-          resto.note,
-          resto.specialty
-        )
-      );
-    }
-  }
+function filterLessOfTreeRateRestos(restoCard, rate) {
+  if (rate < 3) {
+    restoCard.style.display = "block";
+  } else restoCard.style.display = "none";
 }
 
 // filters resturants to only have rate bettween 3 and 4
-function filterFormThreeToFourRate(allRestos) {
-  main.innerHTML = "";
-  for (const resto of allRestos) {
-    if (resto.note > 3 && resto.note <= 4) {
-      main.appendChild(
-        createRestoCard(
-          resto.id,
-          resto.logo,
-          resto.name,
-          resto.note,
-          resto.specialty
-        )
-      );
-    }
-  }
+function filterFormThreeToFourRate(restoCard, rate) {
+  if (rate > 3 && rate <= 4) {
+    restoCard.style.display = "block";
+  } else restoCard.style.display = "none";
 }
 
 // filter the resturants to only have rate above 4
-function filterFormFourToFiveRate(allRestos) {
-  main.innerHTML = "";
-  for (const resto of allRestos) {
-    if (resto.note > 4 && resto.note <= 5) {
-      main.appendChild(
-        createRestoCard(
-          resto.id,
-          resto.logo,
-          resto.name,
-          resto.note,
-          resto.specialty
-        )
-      );
-    }
-  }
+function filterFormFourToFiveRate(restoCard, rate) {
+  if (rate > 4 && rate <= 5) {
+    restoCard.style.display = "block";
+  } else restoCard.style.display = "none";
 }
 
-function filterBySpeciality(allRestos) {
-  document
-    .querySelector("header select")
-    .addEventListener("change", (event) => {
-      document.querySelector("#all-restos").checked = true;
-      filterRestos(allRestos, event.target.value);
-    });
+document.querySelector("header select").addEventListener("change", (event) => {
+  filterBySpeciality(event);
+});
+
+function filterBySpeciality(event) {
+  document.querySelector("#all-restos").checked = true;
+  filterRestos(event.target.value);
 }
 
-function filterRestos(allRestos, speciality) {
-  main.innerHTML = "";
-  for (const resto of allRestos) {
+function filterRestos(speciality) {
+  for (const resto of allRestoCards) {
     if (speciality == "all-speciality") {
-      createRestos(allRestos);
-    } else if (resto.specialty == speciality) {
-      main.appendChild(
-        createRestoCard(
-          resto.id,
-          resto.logo,
-          resto.name,
-          resto.note,
-          resto.specialty
-        )
-      );
-    }
+      resto.style.display = "block";
+    } else if (resto.getAttribute("speciality") == speciality) {
+      resto.style.display = "block";
+    } else resto.style.display = "none";
   }
 }
 
-function searchInRestos() {
-  document.querySelector("#search-bar").addEventListener("keyup", (event) => {
-    document.querySelectorAll("resto-card").forEach((restoCard) => {
-      if (
-        restoCard.getAttribute("name").includes(event.target.value) &&
-        event.target.value != ""
-      ) {
-        restoCard.style.display = "block";
-      } else if (
-        !restoCard.getAttribute("name").includes(event.target.value) &&
-        event.target.value != ""
-      )
-        restoCard.style.display = "none";
-      if (event.target.value == '') restoCard.style.display = "block";
-    });
+document.querySelector("#search-bar").addEventListener("keyup", (event) => {
+  searchInRestos(event);
+});
+
+function searchInRestos(event) {
+  allRestoCards.forEach((restoCard) => {
+    if (
+      restoCard.getAttribute("name").includes(event.target.value) &&
+      event.target.value != ""
+    ) {
+      restoCard.style.display = "block";
+    } else if (
+      !restoCard.getAttribute("name").includes(event.target.value) &&
+      event.target.value != ""
+    )
+      restoCard.style.display = "none";
+    if (event.target.value == "") restoCard.style.display = "block";
   });
 }
 

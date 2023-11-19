@@ -20,7 +20,12 @@ class RestoCard extends HTMLElement{
         </div>
     </div>
         `
+        this.querySelector('button').addEventListener('click', ()=>{
+            localStorage.setItem('selectedItemId', this.id);
+            window.location.href='/resturant_page/resturantPage.html';
+        });
     }
+
 }
 
 customElements.define('resto-card', RestoCard);
