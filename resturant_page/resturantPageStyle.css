@@ -35,7 +35,10 @@ main #hours-section > div  div i{
     color: aqua;
 }
 
-
+main #location-section iframe{
+    border-radius: 10px;
+    margin-top: .5rem;
+}
 
 footer{
     background-color: #323232;
