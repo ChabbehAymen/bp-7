@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+:root{
+    --primary-color:#34E0A1;
+}
+
+
 *{
     box-sizing: border-box;
 }
@@ -32,7 +38,7 @@ main #hours-section > div {
 }
 
 main #hours-section > div  div i{
-    color: aqua;
+    color: var(--primary-color);
 }
 
 main #location-section iframe{
