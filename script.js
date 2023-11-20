@@ -4,16 +4,16 @@
 let rateRadios = document.querySelectorAll('input[name="rate-radio-group"]');
 let main = document.querySelector("main");
 let allRestoCards;
-let xhr = new XMLHttpRequest();
-xhr.open("GET", "/data/resturants_data.json");
+let request = new XMLHttpRequest();
+request.open("GET", "/data/resturants_data.json");
 
-xhr.onload = function () {
-  let allRestos = JSON.parse(xhr.responseText);
+request.onload = function () {
+  let allRestos = JSON.parse(request.responseText);
   createRestos(allRestos);
   createSpecialitySelect();
   allRestoCards = document.querySelectorAll("resto-card");
 };
-xhr.send();
+request.send();
 
 function createRestos(allRestos) {
   document.querySelector("main").innerHTML = "";

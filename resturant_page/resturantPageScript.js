@@ -12,11 +12,11 @@ let availableHoursHolders = document.querySelectorAll(
 let locationTextHolder = document.querySelector("#location-section i");
 let websiteTextHolder = document.querySelector('footer > div .links h3:first-child');
 
-let xhr = new XMLHttpRequest();
-xhr.open("GET", "/data/resturants_data.json");
+let request = new XMLHttpRequest();
+request.open("GET", "/data/resturants_data.json");
 
-xhr.onload = function () {
-  let response = JSON.parse(xhr.response);
+request.onload = function () {
+  let response = JSON.parse(request.response);
   let selectedItem = getRestoById(response);
   setTitleName(selectedItem.name);
   setRateAndSpeciality(
@@ -35,7 +35,7 @@ xhr.onload = function () {
   setLocation(selectedItem.address);
   setWebSitelink(selectedItem.website);
 };
-xhr.send();
+request.send();
 
 function getRestoById(allRestos) {
   for (let resto of allRestos) {
