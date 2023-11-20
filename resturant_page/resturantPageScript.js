@@ -1,7 +1,8 @@
 /*
  *
  */
-let selectedItemId = localStorage.getItem("selectedItemId");
+let searchUrl = new URLSearchParams(window.location.search);
+let selectedItemId = searchUrl.get('id');
 let titleTextHolder = document.querySelector("header h1");
 let rateTextHolder = document.querySelector("header h3 span");
 let logoHolder = document.querySelector("header img");

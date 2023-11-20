@@ -3,6 +3,7 @@
     --primary-color:#34E0A1;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -81,15 +82,17 @@ header > div > div:has(select) select:focus {
 }
 
 main{
+  padding: .5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5%;
-  width: 80%;
+  gap: 1.5rem;
   margin-left: 10%;
+  margin-right: 10%;
 }
 
 resto-card{
   width: 100%;
+  height: 33vh;
   box-shadow: 0 0 4px rgb(0, 0, 0, .3);
 }
 
@@ -125,7 +128,47 @@ resto-card .resto-card > div:has(h3){
 
 
 footer{
-    width: 30vh;
-    width: 100%;
-    background-color: black;
+  background-color: #323232;
+  color:white;
+  padding: 1rem 0;
+  margin-top: 1rem;
 }
+
+.CenterSection{
+  width: 80%;
+  margin-left: 10%;
+}
+
+footer > div .links{
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 1rem;
+}
+
+footer > div .links a{
+  font-size: 1rem;
+  text-decoration: underline;
+  color: white;
+}
+@media screen and (max-width: 1200px) {
+  main{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main{
+    width: 60%;
+    grid-template-columns: 1fr;
+    margin-left: 20%;
+  }
+  footer{
+    justify-self: flex-end;
+  }
+}
+

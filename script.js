@@ -35,24 +35,19 @@ function createRestos(allRestos) {
 // creates my custom element for each object of the fetched json data
 function createRestoCard(id, logo, name, rate, speciality) {
   let restoCard = document.createElement("resto-card");
-  // restoCard.setAttributes(['id', 'logo', 'name', 'rate', 'speciality'], [id, logo, name, rate, speciality]);
-  restoCard.setAttribute("id", id);
-  restoCard.setAttribute("logo", logo);
-  restoCard.setAttribute("name", name);
-  restoCard.setAttribute("rate", rate);
-  restoCard.setAttribute("speciality", speciality);
+  restoCard.setAttributes(
+    ["id", "logo", "name", "rate", "speciality"],
+    [id, logo, name, rate, speciality]
+  );
   return restoCard;
 }
 
-
-// TODO(fix this)
-// window.HTMLElement.prototype.setAttributes = function (attributeskey, attributesValue) {
-//   console.log(this);
-//   for (let i= 0; i<attributeskey.lenght; i++){
-//     console.log(`the key is ${attributeskey[i]},and the value ${attributesValue[i]}`);
-//     this.setAttribute(attributeskey[i], attributesValue[i]);
-//   }
-// }
+// this function automates seting th attrutes for the cards
+window.HTMLElement.prototype.setAttributes = function (attributeskey,attributesValue) {
+  for (let i = 0; i < attributeskey.length; i++) {
+    this.setAttribute(attributeskey[i], attributesValue[i]);
+  }
+};
 
 function createSpecialitySelect() {
   let restos = document.querySelectorAll("main resto-card");
