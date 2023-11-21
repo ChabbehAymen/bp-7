@@ -23,15 +23,8 @@ request.onload = function () {
     ` ${selectedItem.note} | ${selectedItem.specialty} | ${selectedItem.phone}`
   );
   setLogo(selectedItem.logo);
-  setHours([
-    formatDayOfHours(selectedItem.hours.monday,'Monday'),
-    formatDayOfHours(selectedItem.hours.tuesday, 'Tuesday'),
-    formatDayOfHours(selectedItem.hours.wednesday, 'Wednesday'),
-    formatDayOfHours(selectedItem.hours.thursday, 'Thursday'),
-    formatDayOfHours(selectedItem.hours.friday, 'Friday'),
-    formatDayOfHours(selectedItem.hours.saturday, 'Saturday'),
-    formatDayOfHours(selectedItem.hours.sunday, 'Sunday'),
-  ]);
+  let hoursProperties = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'sturday', 'sunday'];
+  setHours(selectedItem, hoursProperties, document.querySelectorAll('#hours-section span'));
   setLocation(selectedItem.address);
   setWebSitelink(selectedItem.website);
 };
@@ -55,14 +48,15 @@ function setLogo(logoLink) {
   logoHolder.setAttribute("src", logoLink);
 }
 
-function formatDayOfHours(hour, day) {
-    return `${day} : ${hour}`
+
+function setHours(selectedItem, hoursProperties, textHolders) {
+  for (let i = 0; i < hoursProperties.length; i++) {
+    textHolders[i].innerText = `${hoursProperties[i].formate()} : ${selectedItem.hours[hoursProperties[i]]}`;
+  }
 }
 
-function setHours(hours) {
-  for (let i = 0; i < availableHoursHolders.length; i++) {
-    availableHoursHolders[i].innerHTML = hours[i];
-  }
+window.String.prototype.formate = function (){
+  return `${this[0].toUpperCase()}${this.slice(1, -1)}y`
 }
 
 function setLocation(location) {
