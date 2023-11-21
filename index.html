@@ -5,58 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RestoStito</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-	<script src="https://kit.fontawesome.com/f3cda0a0f5.js" crossorigin="anonymous"></script>
-	<script src="/components/resturantComponent.js"></script> <!-- this script tag is form my custom element -->
+    <script
+      src="https://kit.fontawesome.com/f3cda0a0f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/components/resturantComponent.js"></script>
+    <!-- this script tag is form my custom element -->
   </head>
   <body>
     <header>
-      <div>
-        <div>
+      <div class="content-holder">
+        <div class="title-and-search-bar">
           <h1>RestoStito</h1>
-		  <label for="search-bar">
-			<input type="text" name="" id="search-bar" placeholder="Search..." />
-			<div><i></i></div>
-		  </label>
+          <label for="search-bar">
+            <input
+              type="text"
+              name=""
+              id="search-bar"
+              placeholder="Search..."
+            />
+            <div><i></i></div>
+          </label>
         </div>
-        <div>
-			<div>
-				<label>
-					<input id="all-restos" type="radio" name="rate-radio-group" value="all" checked>
-					all
-				</label>
-				<label for="below-3-radio">
-					<input type="radio" id="below-3-radio" name="rate-radio-group" value="-3" />
-					Less Than 3.0
-				</label>
-				<label for="above-3-radio">
-					<input type="radio" id="above-3-radio" name="rate-radio-group" value="3-4" />
-					3.0 - 4.0
-				</label>
-				<label for="above-4-radio">
-					<input type="radio" id="above-4-radio" name="rate-radio-group" value="4-5"/>
-					4.0 - 5.0
-				</label>
-			</div>
-			<select name="" id="">
-				<option value="all-speciality">all speciality</option>
-			</select>
-        </div>
-	</div>
-	<hr>
-    </header>
-    <main>
-	</main>
-    <footer>
-		<div class="CenterSection">
-            <h1>RestoStito</h1>
-            <div class="links">
-                <h3><a href="#">Privacy and Cookies Statement</a></h3>
-                <h3><a href="#">How the site works</a></h3>
-                <h3><a href="#">Terms of Use</a></h3>
-            </div>
-        </div>
-	</footer>
+        <div class="fleters-holder">
+          <div class="radio-btns-holder">
+            <label>
+              <input
+                id="all-restos"
+                type="radio"
+                name="rate-radio-group"
+                value="all"
+                checked
+              />
+              all
+            </label>
+            <label for="below-3-radio">
+              <input
+                type="radio"
+                id="below-3-radio"
+                name="rate-radio-group"
+                value="-3"
+              />
+              Less Than 3.0
+            </label>
+            <label for="above-3-radio">
+              <input
+                type="radio"
+                id="above-3-radio"
+                name="rate-radio-group"
+                value="3-4"
+              />
+              3.0 - 4.0
+            </label>
+            <label for="above-4-radio">
+              <input
+                type="radio"
+                id="above-4-radio"
+                name="rate-radio-group"
+                value="4-5"
+              />
+              4.0 - 5.0
+            </label>
+          </div>
 
-    <script type="module" src="script.js" ></script>
+          <div class="rate-select">
+            <select name="rate-select" id="">
+              <option value="all">All</option>
+              <option value="-3">Less Than 3.0</option>
+              <option value="3-4">3.0 - 4.0</option>
+              <option value="4-5">4.0 - 5.0</option>
+            </select>
+          </div>
+
+          <select name="speciality-select" id="">
+            <option value="all-speciality">all speciality</option>
+          </select>
+        </div>
+      </div>
+      <hr />
+    </header>
+    <main></main>
+    <footer>
+      <div class="CenterSection">
+        <h1>RestoStito</h1>
+        <div class="links">
+          <h3><a href="#">Privacy and Cookies Statement</a></h3>
+          <h3><a href="#">How the site works</a></h3>
+          <h3><a href="#">Terms of Use</a></h3>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>

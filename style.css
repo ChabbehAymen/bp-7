@@ -81,6 +81,10 @@ header > div > div:has(select) select:focus {
     box-shadow: 0 0 4px var(--primary-color);
 }
 
+header > div > div:has(select) select[name='rate-select'] {
+  display: none;
+}
+
 main{
   padding: .5rem;
   display: grid;
@@ -157,18 +161,19 @@ footer > div .links a{
 }
 
 @media screen and (max-width: 800px) {
-  body{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+  header .content-holder .fleters-holder .radio-btns-holder {
+    display: none;
+}
+
+  header > div > div:has(select) select[name='rate-select'] {
+    display: block;
   }
+
   main{
     width: 60%;
     grid-template-columns: 1fr;
     margin-left: 20%;
-  }
-  footer{
-    justify-self: flex-end;
   }
 }
 

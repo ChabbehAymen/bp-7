@@ -2,6 +2,8 @@
  *
  */
 let rateRadios = document.querySelectorAll('input[name="rate-radio-group"]');
+let specialitySelect = document.querySelector("header select[name='speciality-select']");
+let rateSelect = document.querySelector("header select[name='rate-select']");
 let main = document.querySelector("main");
 let allRestoCards;
 let request = new XMLHttpRequest();
@@ -49,6 +51,7 @@ window.HTMLElement.prototype.setAttributes = function (attributeskey,attributesV
   }
 };
 
+// create the the specialities options depending on the data
 function createSpecialitySelect() {
   let restos = document.querySelectorAll("main resto-card");
   for (let resto of restos) {
@@ -74,7 +77,7 @@ function isOptionCreated(value) {
 }
 
 function insertOption(speciality) {
-  document.querySelector("header select").innerHTML += `
+  specialitySelect.innerHTML += `
   <option value="${speciality}">${speciality}</option>
   `;
 }
@@ -85,21 +88,25 @@ rateRadios.forEach((radio) => {
   });
 });
 
+rateSelect.addEventListener("change", (event) => {
+  filterByRate(event.target);
+});
+
 function filterByRate(radio) {
-  document.querySelector("header select").value = "all-speciality";
+  specialitySelect.value = "all-speciality";
   allRestoCards.forEach((restoCard) => {
     let restoCardRate = restoCard.getAttribute("rate");
     switch (radio.value) {
-      case radioStates.allRestos:
+      case rateStateFiltersStutus.allRestos:
         restoCard.style.display = "block";
         break;
-      case radioStates.lessThanTree:
+      case rateStateFiltersStutus.lessThanTree:
         filterLessOfTreeRateRestos(restoCard, restoCardRate);
         break;
-      case radioStates.threeToFour:
+      case rateStateFiltersStutus.threeToFour:
         filterFormThreeToFourRate(restoCard, restoCardRate);
         break;
-      case radioStates.fourToFive:
+      case rateStateFiltersStutus.fourToFive:
         filterFormFourToFiveRate(restoCard, restoCardRate);
         break;
     }
@@ -127,7 +134,8 @@ function filterFormFourToFiveRate(restoCard, rate) {
   } else restoCard.style.display = "none";
 }
 
-document.querySelector("header select").addEventListener("change", (event) => {
+specialitySelect.addEventListener("change", (event) => {
+  rateSelect.value = rateStateFiltersStutus.allRestos;
   filterBySpeciality(event);
 });
 
@@ -167,7 +175,7 @@ function searchInRestos(event) {
 }
 
 // this object represents the 4 states of my radio buttons to filtter by
-const radioStates = {
+const rateStateFiltersStutus = {
   allRestos: "all",
   lessThanTree: "-3",
   threeToFour: "3-4",
